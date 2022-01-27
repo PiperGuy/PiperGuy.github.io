@@ -1,0 +1,53 @@
+{
+    "name": "piperguy.github.io",
+    "version": "0.0.1",
+    "description": "🏠 My home on the internet",
+    "license": "MIT",
+    "author": {
+        "name": "Naveen Pandurangi",
+        "email": "naveenpandurangi@yahoo.com",
+        "url": "https://piperguy.github.io"
+    },
+    "bugs": {
+        "url": "https://github.com/PiperGuy/piperguy.github.io/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/piperguy/piperguy.github.io"
+    },
+    "keywords": [
+        "javascript",
+        "react",
+        "next",
+        "eslint",
+        "prettier",
+        "jest",
+        "blog",
+        "portfolio",
+        "hacktoberfest"
+    ],
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "lint:fix": "eslint --fix ."
+    },
+    "dependencies": {
+        "next": "12.0.9",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "styled-components": "^5.3.3"
+    },
+    "devDependencies": {
+        "@types/node": "17.0.12",
+        "@types/react": "17.0.38",
+        "babel-plugin-styled-components": "^2.0.2",
+        "eslint": "8.7.0",
+        "eslint-config-next": "12.0.9",
+        "jest": "^27.4.7",
+        "plop": "^3.0.5",
+        "prettier": "^2.5.1",
+        "typescript": "4.5.5"
+    }
+}
