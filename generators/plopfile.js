@@ -1,6 +1,6 @@
-const { page, component } = require('./settings')
+const {  component } = require('./settings')
 
 module.exports = function (plop) {
-  plop.setGenerator('page', page)
+  plop.setDefaultInclude({generators: true})
   plop.setGenerator('component', component)
 }
