@@ -1,1 +1,1 @@
-export {default} from "./PostComments"
+export { default } from './PostComments';

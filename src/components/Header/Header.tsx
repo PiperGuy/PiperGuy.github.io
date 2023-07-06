@@ -1,6 +1,5 @@
 import Link from '~/components/Link';
 import type { FC } from 'react';
-
 import ColorTheme from '~/components/ColorTheme';
 import Logo from '~/components/Logo';
 import MobileNavigation from '~/components/MobileNavigation';

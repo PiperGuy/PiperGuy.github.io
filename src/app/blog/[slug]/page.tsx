@@ -1,10 +1,7 @@
-import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { FC } from 'react';
-
 import Post from '~/components/Post';
 import PostList from '~/components/PostList';
 import Section from '~/components/Section';
-import type { Post as PostType, PostFrontmatter } from '~/types/post';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '~/utils/posts';
 
 type PostPageProps = {
@@ -24,7 +21,7 @@ export function generateStaticParams() {
 }
 
 const getProps = async (slugString: string) => {
-	const slug = slugString as PostFrontmatter['slug'];
+	const slug = slugString;
 	const post = await getPostBySlug(slug);
 	const relatedPosts = getRelatedPosts(post.frontmatter);
 

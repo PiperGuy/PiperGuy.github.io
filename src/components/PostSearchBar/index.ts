@@ -1,1 +1,1 @@
-export {default} from "./PostSearchBar"
+export { default } from './PostSearchBar';

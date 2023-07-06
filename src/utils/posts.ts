@@ -6,7 +6,7 @@ import path from 'path';
 import type { Post, PostFrontmatter, Tag, Topic } from '~/types/post';
 import { transformMarkdown } from '~/utils/markdown';
 
-const icons = {
+const icons: any = {
 	coding: '💻',
 	tech: '🔌',
 	life: '😎'
@@ -117,6 +117,7 @@ const getTags = (): Tag[] => {
 			return post.tags;
 		});
 
+	// @ts-ignore
 	const tags = [...new Set(duplicateTags)];
 	return tags;
 };

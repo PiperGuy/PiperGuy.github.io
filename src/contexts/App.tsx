@@ -1,6 +1,6 @@
 'use client';
 import type { Dispatch, FC, ReactNode, SetStateAction } from 'react';
-import { createContext, useMemo, useState } from 'react';
+import { createContext, useState } from 'react';
 
 type AppContextType = {
 	open: boolean;

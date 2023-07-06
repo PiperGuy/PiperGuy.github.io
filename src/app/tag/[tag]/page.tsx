@@ -1,21 +1,40 @@
-import SEO from '~/components/seo';
-import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { FC } from 'react';
 
 import PostList from '~/components/PostList';
-import type { PostFrontmatter, Tag } from '~/types/post';
+import type { Tag } from '~/types/post';
 import { getPostsByTag, getTags } from '~/utils/posts';
 
 type TagPageProps = {
-	tag: Tag;
-	posts: PostFrontmatter[];
+	params: any;
 };
 
-const TagPage: FC<TagPageProps> = ({ tag, posts }) => {
+const getProps = (tagSlug: Tag) => {
+	const tag = tagSlug;
+	const posts = getPostsByTag(tag);
+
+	return {
+		tag,
+		posts
+	};
+};
+
+export const generateStaticParams = () => {
+	const tags = getTags();
+
+	return tags.map((tag) => {
+		return {
+			params: {
+				tag
+			}
+		};
+	});
+};
+
+const TagPage: FC<TagPageProps> = ({ params }) => {
+	const { tag: tagSlug } = params;
+	const { tag, posts } = getProps(tagSlug);
 	return (
 		<>
-			<SEO title={`tag | ${tag}`} />
-
 			<div className='self-start'>
 				<h1 className='mb-16 flex flex-col items-center gap-y-2'>
 					<span className='font-heading text-4xl font-semibold'>posts tagged</span>
@@ -31,34 +50,4 @@ const TagPage: FC<TagPageProps> = ({ tag, posts }) => {
 	);
 };
 
-const getStaticProps: GetStaticProps = (context) => {
-	const tag = context?.params?.tag as Tag;
-	const posts = getPostsByTag(tag);
-
-	return {
-		props: {
-			tag,
-			posts
-		}
-	};
-};
-
-const getStaticPaths: GetStaticPaths = () => {
-	const tags = getTags();
-
-	const paths = tags.map((tag) => {
-		return {
-			params: {
-				tag
-			}
-		};
-	});
-
-	return {
-		paths,
-		fallback: false
-	};
-};
-
 export default TagPage;
-export { getStaticPaths, getStaticProps };

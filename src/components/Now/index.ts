@@ -1,1 +1,1 @@
-export {default} from "./Now"
+export { default } from './Now';

@@ -27,7 +27,7 @@
 
 :root {
 	/* highlighting */
-	--grvsc-line-highlighted-background-color: #ef716c66;
+	--grvsc-line-highlighted-background-color: #ef716c;
 	--grvsc-line-highlighted-border-color: #ef716c;
 	--grvsc-line-highlighted-border-width: 4px;
 }

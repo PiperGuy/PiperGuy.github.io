@@ -1,19 +1,19 @@
-import type {FC} from "react"
+import type { FC } from 'react';
 
-import PostComments from "~/components/PostComments"
-import PostEdit from "~/components/PostEdit"
+import PostComments from '~/components/PostComments';
+import PostEdit from '~/components/PostEdit';
 
 type PostFooterProps = {
-    slug: string
-}
+	slug: string;
+};
 
-const PostFooter: FC<PostFooterProps> = ({slug}) => {
-    return (
-        <section className="grid grid-flow-col justify-between">
-            <PostComments slug={slug} />
-            <PostEdit slug={slug} />
-        </section>
-    )
-}
+const PostFooter: FC<PostFooterProps> = ({ slug }) => {
+	return (
+		<section className='grid grid-flow-col justify-between'>
+			<PostComments slug={slug} />
+			<PostEdit slug={slug} />
+		</section>
+	);
+};
 
-export default PostFooter
+export default PostFooter;

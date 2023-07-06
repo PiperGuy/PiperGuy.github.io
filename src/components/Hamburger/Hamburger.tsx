@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-
 import Icon from '~/components/Icon';
 import useApp from '~/hooks/useApp';
 

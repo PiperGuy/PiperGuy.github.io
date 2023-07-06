@@ -1,1 +1,1 @@
-export {default} from "./PostEdit"
+export { default } from './PostEdit';

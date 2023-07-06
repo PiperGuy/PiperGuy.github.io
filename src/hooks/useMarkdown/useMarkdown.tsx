@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from '~/components/Link';
 import Head from 'next/head';
 import React, { createElement, Fragment } from 'react';

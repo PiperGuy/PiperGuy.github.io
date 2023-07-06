@@ -1,24 +1,15 @@
-const technologies = [
-    "gatsby",
-    "javascript",
-    "next",
-    "node",
-    "react",
-    "svelte",
-    "tailwind",
-    "typescript",
-]
+const technologies = ['gatsby', 'javascript', 'next', 'node', 'react', 'svelte', 'tailwind', 'typescript'];
 
 const getTechnologies = (topics: string[]): string[] => {
-    const tech = []
+	const tech: any = [];
 
-    topics.forEach(topic => {
-        if (technologies.includes(topic)) {
-            tech.push(topic)
-        }
-    })
+	topics.forEach((topic) => {
+		if (technologies.includes(topic)) {
+			tech.push(topic);
+		}
+	});
 
-    return tech
-}
+	return tech;
+};
 
-export {getTechnologies, technologies}
+export { getTechnologies, technologies };

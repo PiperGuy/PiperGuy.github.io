@@ -1,4 +1,3 @@
-import SEO from '~/components/seo';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { FC } from 'react';
 
@@ -7,52 +6,39 @@ import type { Now as NowType, NowFrontmatter } from '~/types/now';
 import { getAllNows, getNewerNow, getNowByDate, getOlderNow } from '~/utils/now';
 
 type NowPageProps = {
-	currentNow: NowType;
-	newerNow: NowType;
-	olderNow: NowType;
+	params: any;
 };
 
-const NowPage: FC<NowPageProps> = ({ currentNow, newerNow, olderNow }) => {
-	return (
-		<>
-			<SEO title='🧭 now' />
-			<Now now={currentNow} newer={newerNow} older={olderNow} />
-		</>
-	);
-};
-
-const getStaticProps: GetStaticProps = async (context) => {
-	const date = context?.params?.slug as NowFrontmatter['date'];
-
-	const currentNow = await getNowByDate(date);
-	const newerNow = await getNewerNow(currentNow);
-	const olderNow = await getOlderNow(currentNow);
-
-	return {
-		props: {
-			currentNow,
-			newerNow,
-			olderNow
-		}
-	};
-};
-
-const getStaticPaths: GetStaticPaths = () => {
+export function generateStaticParams() {
 	const nows = getAllNows();
 
-	const paths = nows.map((now) => {
+	return nows.map((now) => {
 		return {
 			params: {
 				slug: now
 			}
 		};
 	});
+}
+
+const getProps = async (slugString: string) => {
+	const date = slugString;
+
+	const currentNow = await getNowByDate(date);
+	const newerNow = await getNewerNow(currentNow);
+	const olderNow = await getOlderNow(currentNow);
 
 	return {
-		paths,
-		fallback: false
+		currentNow,
+		newerNow,
+		olderNow
 	};
 };
 
+const NowPage: FC<NowPageProps> = async ({ params }) => {
+	const { slug } = params;
+	const { currentNow, newerNow, olderNow } = await getProps(slug);
+	return <Now now={currentNow} newer={newerNow} older={olderNow} />;
+};
+
 export default NowPage;
-export { getStaticPaths, getStaticProps };

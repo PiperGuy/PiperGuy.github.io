@@ -9,7 +9,7 @@ type HeadingProps = {
 	children?: ReactNode;
 };
 
-const Heading: FC<HeadingProps> = ({ level, id, children }) => {
+const Heading: FC<HeadingProps> = ({ level, id, children }: any) => {
 	const text = typeof children === 'string' ? children : children[0];
 
 	const slug = id

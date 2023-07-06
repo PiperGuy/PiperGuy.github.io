@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-
 import Project from '~/components/Project';
 import type { Project as ProjectType } from '~/types/project';
 

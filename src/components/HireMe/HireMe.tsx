@@ -16,15 +16,10 @@ const HireMe: FC<HireMeProps> = ({ testimonials }) => {
 
 			<p>
 				I just snagged a new job at{' '}
-				<FancyLink to='https://atlassian.com'>
-					<span className='font-semibold'>Atlassian</span>
+				<FancyLink to='https://inferless.com'>
+					<span className='font-semibold'>Inferless</span>
 				</FancyLink>
-				, working on{' '}
-				<FancyLink to='https://trello.com'>
-					<span className='font-semibold'>Trello</span>
-				</FancyLink>{' '}
-				as a <span className='italic'>Developer Experience Engineer</span>. Although I&apos;m not actively looking for a
-				new role, please check out my{' '}
+				. Although I&apos;m not actively looking for a new role, please check out my{' '}
 				<FancyLink to='https://youfoundpiperguy.com/resume'>
 					<span className='font-semibold'>resume</span>
 				</FancyLink>{' '}

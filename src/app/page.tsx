@@ -19,7 +19,7 @@ const getProps = async () => {
 	};
 };
 
-const IndexPage: FC<IndexPageProps> = async () => {
+const IndexPage: FC = async () => {
 	const { latestPosts, featuredProjects } = await getProps();
 	return <Home latestPosts={latestPosts} featuredProjects={featuredProjects} />;
 };

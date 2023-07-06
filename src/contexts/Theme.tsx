@@ -1,6 +1,6 @@
 'use client';
 import type { FC, ReactNode } from 'react';
-import { createContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import type { ThemeContextType } from '~/types/context';
 import type { Theme } from '~/types/theme';

@@ -1,1 +1,0 @@
-export { rehypeCloudinaryImageSize } from './rehypeCloudinaryImageSize';
