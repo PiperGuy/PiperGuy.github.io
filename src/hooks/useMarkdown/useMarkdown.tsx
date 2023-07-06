@@ -14,9 +14,9 @@ const useMarkdown = (html: string) => {
 			createElement,
 			Fragment,
 			components: {
-				html: ({ children }) => children,
-				head: ({ children }) => <Head>{children}</Head>,
-				body: ({ children }) => children,
+				html: ({ children }: any) => children,
+				head: ({ children }: any) => <Head>{children}</Head>,
+				body: ({ children }: any) => children,
 				a: ({ href, children, ...props }) => {
 					return (
 						<Link to={href} {...props}>
@@ -30,7 +30,7 @@ const useMarkdown = (html: string) => {
 				h2: ({ children }) => {
 					return <Heading level={2}>{children}</Heading>;
 				},
-				h3: ({ children }) => {
+				h3: ({ children }: any) => {
 					return <Heading level={3}>{children}</Heading>;
 				}
 			}
