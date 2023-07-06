@@ -4,7 +4,7 @@ import Icon from '~/components/Icon';
 import Link from '~/components/Link';
 
 type SocialLinkProps = {
-	platform: 'instagram' | 'github' | 'twitter' | 'youtube' | 'twitch' | 'discord';
+	platform: 'instagram' | 'github' | 'twitter' | 'linkedin';
 };
 
 const SocialLink: FC<SocialLinkProps> = ({ platform }) => {
@@ -27,7 +27,7 @@ const SocialLink: FC<SocialLinkProps> = ({ platform }) => {
 			name = 'twitter';
 			break;
 
-		case 'discord':
+		case 'linkedin':
 			url = 'https://youfoundpiperguy.com/discord';
 			name = 'discord';
 			break;

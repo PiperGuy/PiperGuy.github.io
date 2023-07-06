@@ -11,7 +11,7 @@ const PostMeta: FC<PostMetaProps> = ({ date, tags, topic }) => {
 		<div className='flex justify-between'>
 			<span className='lowercase'>
 				{formatDate(date)} in{' '}
-				<Link to={`/topic/${topic}`} className='transition duration-300 hover:text-purple-400'>
+				<Link to={`/topic/${topic}`} className='transition duration-300 hover:text-red-400'>
 					#{topic}
 				</Link>
 			</span>
@@ -21,7 +21,7 @@ const PostMeta: FC<PostMetaProps> = ({ date, tags, topic }) => {
 					return (
 						<Link
 							key={tag}
-							className='rounded bg-black px-2 font-heading text-sm font-bold text-white duration-300 hover:bg-purple-400 dark:bg-white dark:text-black dark:hover:bg-purple-400'
+							className='rounded bg-black px-2 font-heading text-sm font-bold text-white duration-300 hover:bg-red-400 dark:bg-white dark:text-black dark:hover:bg-red-400'
 							to={`/tag/${tag}`}
 						>
 							{tag}

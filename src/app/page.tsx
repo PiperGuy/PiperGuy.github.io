@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-
 import Home from '~/components/Home';
 import type { PostFrontmatter } from '~/types/post';
 import type { Project } from '~/types/project';

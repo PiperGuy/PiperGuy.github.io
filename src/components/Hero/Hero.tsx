@@ -10,7 +10,7 @@ const Hero: FC = () => {
 				{/* <img
 					src={createImageUrl('/pages/home/profile.jpg')}
 					alt='bg'
-					className='transform rounded-full border-7 border-black duration-300 hover:-rotate-2 hover:border-purple-400 dark:border-white dark:hover:border-purple-400'
+					className='transform rounded-full border-7 border-black duration-300 hover:-rotate-2 hover:border-red-400 dark:border-white dark:hover:border-red-400'
 					width='460'
 					height='460'
 				/> */}

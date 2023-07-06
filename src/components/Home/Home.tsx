@@ -16,13 +16,6 @@ type HomeProps = {
 const Home: FC<HomeProps> = ({ latestPosts, featuredProjects }) => {
 	return (
 		<div className='mt-16 grid gap-y-16 max-[700px]:m-0'>
-			<button
-				onClick={() => {
-					console.log('test');
-				}}
-			>
-				click me
-			</button>
 			<Hero />
 
 			<Section title='blog' link='/blog'>

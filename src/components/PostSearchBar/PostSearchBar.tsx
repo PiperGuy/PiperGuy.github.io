@@ -11,8 +11,7 @@ type PostSearchBarProps = {
 	onSearch?: (posts: PostFrontmatter[]) => void;
 };
 
-const PostSearchBar: FC<PostSearchBarProps> = ({ posts }) => {
-	//  const [posts, setPosts] = useState(posts);
+const PostSearchBar: FC<PostSearchBarProps> = ({ posts, onSearch }) => {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const router = useRouter();
@@ -31,10 +30,6 @@ const PostSearchBar: FC<PostSearchBarProps> = ({ posts }) => {
 
 		const filteredPosts = fuse.search(query).map((result) => result.item);
 		return filteredPosts;
-	};
-
-	const onSearch = (filteredPosts: PostFrontmatter[]) => {
-		// setPosts(filteredPosts);
 	};
 
 	useEffect(
@@ -62,7 +57,7 @@ const PostSearchBar: FC<PostSearchBarProps> = ({ posts }) => {
 			</label>
 
 			<input
-				className='w-full rounded border-3 border-black px-8 py-4 text-base shadow-box placeholder:text-gray-400 focus:border-purple-400 focus:outline-none dark:shadow-box-white'
+				className='w-full rounded border-3 border-black px-8 py-4 text-base shadow-box placeholder:text-gray-400 focus:border-red-400 focus:outline-none dark:shadow-box-white'
 				type='text'
 				id='search'
 				placeholder='search by title, topic, or tag...'

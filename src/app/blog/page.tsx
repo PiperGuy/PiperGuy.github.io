@@ -1,10 +1,7 @@
-// 'use client';
-import SEO from '~/components/seo';
 import type { FC } from 'react';
-import { useState } from 'react';
 
-import PostList from '~/components/PostList';
-import PostSearchBar from '~/components/PostSearchBar';
+import Blog from '~/components/Blog/Blog';
+
 import type { PostFrontmatter } from '~/types/post';
 import { getAllPosts } from '~/utils/posts';
 
@@ -14,7 +11,6 @@ type BlogPageProps = {
 
 const getProps = () => {
 	const allPosts = getAllPosts();
-
 	return {
 		allPosts
 	};
@@ -23,16 +19,7 @@ const getProps = () => {
 const BlogPage: FC<BlogPageProps> = () => {
 	const { allPosts } = getProps();
 
-	return (
-		<>
-			<SEO title='✍🏼 blog' />
-
-			<div>
-				<PostSearchBar posts={allPosts} />
-				<PostList posts={allPosts} />
-			</div>
-		</>
-	);
+	return <Blog allPosts={allPosts} />;
 };
 
 export default BlogPage;
